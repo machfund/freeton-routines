@@ -11,7 +11,7 @@ echo "Validator engine PID: $PID"
         if [[ -z "${PID}" ]]
         then
             echo "$(date "+%Y-%m-%d %H:%M:%S"): Stopped!" >> $LOG_DIR/$LOG_FILE
-            ${SCRIPT_DIR}/sendNotificationTelegram.sh "Node is down. Starting..."
+            #${SCRIPT_DIR}/sendNotificationTelegram.sh "Node is down. Starting..."
             sleep 5
             ${SCRIPT_DIR}/run.sh
             sleep 5
@@ -21,11 +21,11 @@ echo "Validator engine PID: $PID"
             if [[ -z ${PID} ]]
             then
                         echo "$(date "+%Y-%m-%d %H:%M:%S"): Start failed!" >> $LOG_DIR/$LOG_FILE
-                        ${SCRIPT_DIR}/sendNotificationTelegram.sh "Node is still down! Check it manually"
+                        #${SCRIPT_DIR}/sendNotificationTelegram.sh "Node is still down! Check it manually"
                 else
                         echo "New validator engine PID: $PID"
                         echo "$(date "+%Y-%m-%d %H:%M:%S"): Started!" >> $LOG_DIR/$LOG_FILE
-                        ${SCRIPT_DIR}/sendNotificationTelegram.sh "Node is up!"
+                        #${SCRIPT_DIR}/sendNotificationTelegram.sh "Node is up!"
                 fi
         else
             echo "$(date "+%Y-%m-%d %H:%M:%S"): Running..." >> $LOG_DIR/$LOG_FILE
